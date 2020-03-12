@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using MongoDB.Driver;
 using BookListRazor.Model;
 using BooksListRazor.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace BookListRazor.Services
 
@@ -16,9 +17,9 @@ namespace BookListRazor.Services
     {
          private readonly IMongoCollection<Book> books;
 
-           public BookServices(IBookstoreDatabaseSettings config)
+           public BookServices(IConfiguration config)
         {
-            MongoClient client = new MongoClient(settings.ConnectionString);
+            MongoClient client = new MongoClient(config.GetConnectionString(""));
             IMongoDatabase database = client.GetDatabase("BookListRazorDb");
             books = database.GetCollection<Book>("Books");
         }
