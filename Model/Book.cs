@@ -20,5 +20,8 @@ namespace BookListRazor.Model
 
         [BsonElement("Author")]
         public string Author { get; set; }
+
+        [BsonElement("ISBN")]
+        public string ISBN {get; set;}
     }
 }
