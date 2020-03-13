@@ -20526,6 +20526,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/proper/asp_tutorials/BookListRazor/Pages/BookList/Create.cshtml",
+      "TargetPath": "Pages\\BookList\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/proper/asp_tutorials/BookListRazor/Pages/_ViewImports.cshtml",
       "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"

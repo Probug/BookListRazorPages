@@ -19,7 +19,7 @@ namespace BookListRazor.Services
 
            public BookServices(IConfiguration config)
         {
-            MongoClient client = new MongoClient(config.GetConnectionString(""));
+            MongoClient client = new MongoClient(config.GetConnectionString("BookListRazorDb"));
             IMongoDatabase database = client.GetDatabase("BookListRazorDb");
             books = database.GetCollection<Book>("Books");
         }
