@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BookListRazor.Model;
 using BookListRazor.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BookListRazor.Pages.BookList
@@ -20,10 +21,45 @@ namespace BookListRazor.Pages.BookList
         
         [BindProperty]
          public Book Book {get; set;}
-         public void OnGet()
+        public IActionResult OnGet()
         {
+            return Page();
         }
 
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        // public IActionResult Create(Book Book)
+        //{
 
+        // }
+
+
+
+        public IActionResult OnPost()
+        {
+
+            if (ModelState.IsValid)
+            {
+                _db.Create(Book);
+                return RedirectToPage("Index");
+            }
+            else
+            {
+                return Page();
+            }
+        }
+        /* public async Task <IActionResult> OnPost()
+         {
+             if (ModelState.IsValid)
+             {
+                await _db.Book.AddAsync(Book);
+                await _db.SaveChangesAsync();
+                return RedirectToPage("Index");
+             }
+             else
+             {
+                 return Page();
+             }
+         }*/
     }
 }
