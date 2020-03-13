@@ -24,13 +24,6 @@ namespace BookListRazor.Services
             books = database.GetCollection<Book>("Books");
         }
 
-      /*  public BookServices(IBookstoreDatabaseSettings settings)
-        {
-            var client = new MongoClient(settings.ConnectionString);
-            var database = client.GetDatabase(settings.DatabaseName);
-            books = database.GetCollection<Book>(settings.BooksCollectionName);
-        }*/
-
          public List<Book> Get() =>
 
             books.Find(book => true).ToList();
