@@ -55,19 +55,3 @@ namespace BookListRazor.Pages.BookList
 
 
  
-       /* public ActionResult Edit(string id, Car car)
-        {
-            if (id != car.Id)
-            {
-                return NotFound();
-            }
-            if (ModelState.IsValid)
-            {
-                carService.Update(id, car);
-                return RedirectToAction(nameof(Index));
-            }
-            else
-            {
-                return View(car);
-            }
-        }*/
