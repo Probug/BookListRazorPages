@@ -25,6 +25,7 @@ namespace BookListRazor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<BookServices>();
+            services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
@@ -51,6 +52,7 @@ namespace BookListRazor
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
         }
